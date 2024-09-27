@@ -2,6 +2,16 @@
 
 string filePath = "c:\\temp\\ListadoArticulos.pdf";
 
+// Definir la cadena de conexión aquí
+//string connectionString = "User Id=prd;Password=prd;Data Source=((DESCRIPTION =(ADDRESS_LIST=(ADDRESS =(PROTOCOL = TCP)(HOST = 192.168.1.12)(PORT = 1522)))(CONNECT_DATA =(SERVICE_NAME = mgk))))";
+string connectionString = "User Id=prd;Password=prd;Data Source=//192.168.1.12:1522/mgk";
+
+using (var oracleService = new OracleService(connectionString))
+{
+    // Llamar al método que ejecuta una consulta
+    oracleService.GetProducts();
+}
+
 // Crear una lista de productos
 List<Producto> productos = new List<Producto>
         {

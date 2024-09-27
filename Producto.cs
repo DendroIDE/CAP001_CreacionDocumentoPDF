@@ -13,6 +13,7 @@ namespace CAP001_CreacionDocumentoPDF
         public decimal PrecioUnitario { get; set; }
         public decimal Cantidad { get; set; }
         public char Vigente { get; set; }
+        public string Imagen { get; set; }
 
     }
 }

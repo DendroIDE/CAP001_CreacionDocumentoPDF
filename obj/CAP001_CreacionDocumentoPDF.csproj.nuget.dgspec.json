@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Oracle.ManagedDataAccess.Core": {
+              "target": "Package",
+              "version": "[23.5.1, )"
+            },
             "PDFsharp": {
               "target": "Package",
               "version": "[6.1.1, )"
