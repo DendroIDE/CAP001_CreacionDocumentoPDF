@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\CAP001_CreacionDocumentoPDF.csproj",
         "projectName": "CAP001_CreacionDocumentoPDF",
         "projectPath": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\CAP001_CreacionDocumentoPDF.csproj",
-        "packagesPath": "C:\\Users\\DendroIDE\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\",
         "outputPath": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DendroIDE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PROGRAMADOR\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -28,3 +28,4 @@ D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\obj\Debug\net8.0\refint\C
 D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\obj\Debug\net8.0\CAP001_CreacionDocumentoPDF.pdb
 D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\obj\Debug\net8.0\CAP001_CreacionDocumentoPDF.genruntimeconfig.cache
 D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\obj\Debug\net8.0\ref\CAP001_CreacionDocumentoPDF.dll
+D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\obj\Debug\net8.0\CAP001_CreacionDocumentoPDF.sourcelink.json
