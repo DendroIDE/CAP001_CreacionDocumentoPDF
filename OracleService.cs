@@ -52,13 +52,23 @@ namespace CAP001_CreacionDocumentoPDF
    AND A.SECC_OFICINA = '001'
    AND A.VIGENTE = 'S'
    AND V.LSPR_LSPR_ID = '0'
- ORDER BY 1";
+   AND T.GRAR_CODIGRUP = '03'
+ ORDER BY VIGENTE DESC, CODIGO ASC";
             using (var command = new OracleCommand(query, GetConnection()))
             {
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
+                        // Verifica si el campo 'Vigente' es NULL antes de leerlo
+                        byte[]? imagen = null;
+                        if (!reader.IsDBNull(6))
+                        {
+                            using (var blob = reader.GetOracleBlob(6)) // Lee el campo como BLOB
+                            {
+                                imagen = blob.Value; // Asigna el valor del BLOB como un array de bytes
+                            }
+                        }
                         // Crear una instancia de Producto y asignar los valores de las columnas
                         var articulo = new Articulo
                         {
@@ -67,9 +77,8 @@ namespace CAP001_CreacionDocumentoPDF
                             Existencia = reader.GetDecimal(2),
                             Pvp = reader.GetDecimal(3),
                             Ubicacion = reader.GetString(4),
-                            Vigente = reader.GetChar(5),
-                            Imagen = reader.GetString(6)
-
+                            Vigente = reader.GetString(5)[0],
+                            Imagen = imagen
                         };
                         articulos.Add(articulo);
                     }

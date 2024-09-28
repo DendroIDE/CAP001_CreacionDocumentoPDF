@@ -14,7 +14,7 @@ namespace CAP001_CreacionDocumentoPDF
         public decimal Pvp { get; set; }
         public string Ubicacion { get; set; }
         public char Vigente { get; set; }
-        public string Imagen { get; set; }
+        public byte[] Imagen { get; set; }
 
     }
 }

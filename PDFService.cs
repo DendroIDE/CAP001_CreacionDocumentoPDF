@@ -51,6 +51,7 @@ namespace CAP001_CreacionDocumentoPDF
                 gfx.DrawString("PVP", fontBold, XBrushes.Black, x + 255, y);
                 gfx.DrawString("Existencia", fontBold, XBrushes.Black, x + 315, y);
                 gfx.DrawString("Vigente", fontBold, XBrushes.Black, x + 365, y);
+
                 y += rowHeight;
 
                 // Dibujar la línea debajo del encabezado
