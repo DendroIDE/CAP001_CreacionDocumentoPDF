@@ -10,7 +10,7 @@ namespace CAP001_CreacionDocumentoPDF
 {
     public class PDFService
     {
-        public void CreatePDF(string filePath, List<Producto> productos)
+        public void CreatePDF(string filePath, List<Articulo> productos)
         {
             // Crear un nuevo documento PDF
             PdfDocument pdf = new PdfDocument();
@@ -49,7 +49,7 @@ namespace CAP001_CreacionDocumentoPDF
                 gfx.DrawString("Codigo", fontBold, XBrushes.Black, x, y);
                 gfx.DrawString("Nombre", fontBold, XBrushes.Black, x + 85, y);
                 gfx.DrawString("PVP", fontBold, XBrushes.Black, x + 255, y);
-                gfx.DrawString("Cantidad", fontBold, XBrushes.Black, x + 315, y);
+                gfx.DrawString("Existencia", fontBold, XBrushes.Black, x + 315, y);
                 gfx.DrawString("Vigente", fontBold, XBrushes.Black, x + 365, y);
                 y += rowHeight;
 
@@ -71,8 +71,8 @@ namespace CAP001_CreacionDocumentoPDF
                 // Dibujar el contenido de la fila
                 gfx.DrawString(producto.Codigo, font, XBrushes.Black, x, y);
                 gfx.DrawString(producto.Nombre, font, XBrushes.Black, x + 85, y);
-                gfx.DrawString(producto.PrecioUnitario.ToString("C"), font, XBrushes.Black, x + 255, y);
-                gfx.DrawString(producto.Cantidad.ToString("F2"), font, XBrushes.Black, x + 315, y);
+                gfx.DrawString(producto.Pvp.ToString("C"), font, XBrushes.Black, x + 255, y);
+                gfx.DrawString(producto.Existencia.ToString("F2"), font, XBrushes.Black, x + 315, y);
                 gfx.DrawString(producto.Vigente.ToString(), font, XBrushes.Black, x + 365, y);
                 y += rowHeight + 100;
 

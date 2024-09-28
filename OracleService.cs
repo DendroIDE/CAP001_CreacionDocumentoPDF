@@ -29,9 +29,30 @@ namespace CAP001_CreacionDocumentoPDF
         }
 
         // Ejemplo de consulta de datos
-        public List<Producto> GetProducts()
+        public List<Articulo> GetArticulos()
         {
-            string query = "SELECT * FROM ALM_ARTICULOS";
+            List<Articulo> articulos = new List<Articulo>();
+
+            string query = @"SELECT T.ARTICULO CODIGO,
+       T.NOMBRE,
+       PKGENERAL.F_ARTICULO_EXISTENCIA(T.GRAR_COMPANIA,
+                                       T.GRAR_CLASE,
+                                       T.GRAR_CODIGRUP,
+                                       T.ARTICULO,
+                                       SYSDATE,
+                                       '001') EXISTENCIA,
+       V.PRECVENT PVP,
+       A.SECC_CODIBODE UBICACION,
+       T.VIGENTE,
+       T.IMAGEN1
+  FROM ALM_ARTICULOS T, ALM_UBICACION A, VEN_PRECDESC V
+ WHERE T.ARTICULO = A.ARTL_ARTICULO
+   AND V.ARTL_ARTICULO = T.ARTICULO
+   AND T.GRAR_CLASE = 'INVR'
+   AND A.SECC_OFICINA = '001'
+   AND A.VIGENTE = 'S'
+   AND V.LSPR_LSPR_ID = '0'
+ ORDER BY 1";
             using (var command = new OracleCommand(query, GetConnection()))
             {
                 using (var reader = command.ExecuteReader())
@@ -39,19 +60,22 @@ namespace CAP001_CreacionDocumentoPDF
                     while (reader.Read())
                     {
                         // Crear una instancia de Producto y asignar los valores de las columnas
-                        var producto = new Producto
+                        var articulo = new Articulo
                         {
-                            Codigo = reader.GetInt32(0),      // Primera columna: ID
-                            Nombre = reader.GetString(1),  // Segunda columna: NOMBRE
-                            PrecioUnitario = reader.GetDecimal(2),
-                            Cantidad = reader.GetInt32(3)
-                            
+                            Codigo = reader.GetString(0),
+                            Nombre = reader.GetString(1),
+                            Existencia = reader.GetDecimal(2),
+                            Pvp = reader.GetDecimal(3),
+                            Ubicacion = reader.GetString(4),
+                            Vigente = reader.GetChar(5),
+                            Imagen = reader.GetString(6)
+
                         };
-                        productos.Add(producto);
+                        articulos.Add(articulo);
                     }
                 }
             }
-            return productos
+            return articulos;
         }
 
         public void Dispose()
