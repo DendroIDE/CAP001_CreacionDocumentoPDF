@@ -53,6 +53,14 @@
             "PDFsharp": {
               "target": "Package",
               "version": "[6.1.1, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.8, )"
             }
           },
           "imports": [

@@ -1,10 +1,10 @@
 ﻿using PdfSharp.Drawing;
 using PdfSharp.Pdf;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PdfSharp.UniversalAccessibility.Drawing;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+using System.Drawing;       // Para trabajar con imágenes
+using System.Drawing.Imaging; // Para trabajar con formatos de imagen
 
 namespace CAP001_CreacionDocumentoPDF
 {
@@ -41,21 +41,23 @@ namespace CAP001_CreacionDocumentoPDF
                 gfx = XGraphics.FromPdfPage(page);
                 tableWidth = page.Width - 50;
                 pageHeight = page.Height;
-                availableHeight = pageHeight - 100; // margen superior e inferior
-                maxRowsPerPage = (int)(availableHeight / rowHeight); // número máximo de filas por página
+                availableHeight = pageHeight - 50; // margen superior e inferior
+                //maxRowsPerPage = (int)(availableHeight / rowHeight); // número máximo de filas por página
+                maxRowsPerPage = (6); // número máximo de filas por página
                 y = 25; // Reiniciar la posición vertical para la nueva página
 
                 // Dibujar encabezados de la tabla en la nueva página
-                gfx.DrawString("Codigo", fontBold, XBrushes.Black, x, y);
-                gfx.DrawString("Nombre", fontBold, XBrushes.Black, x + 85, y);
-                gfx.DrawString("PVP", fontBold, XBrushes.Black, x + 255, y);
-                gfx.DrawString("Existencia", fontBold, XBrushes.Black, x + 315, y);
-                gfx.DrawString("Vigente", fontBold, XBrushes.Black, x + 365, y);
+                gfx.DrawString("Codigo", fontBold, XBrushes.DarkRed, x, y);
+                gfx.DrawString("Nombre", fontBold, XBrushes.DarkRed, x + 85, y);
+                gfx.DrawString("PVP", fontBold, XBrushes.DarkRed, x + 300, y);
+                gfx.DrawString("Existencia", fontBold, XBrushes.DarkRed, x + 360, y);
+                gfx.DrawString("Vigente", fontBold, XBrushes.DarkRed, x + 415, y);
+                gfx.DrawString("Imagen", fontBold, XBrushes.DarkRed, x + 460, y);
 
                 y += rowHeight;
 
                 // Dibujar la línea debajo del encabezado
-                gfx.DrawLine(XPens.Black, x, y, x + tableWidth, y);
+                gfx.DrawLine(XPens.Gray, x, y, x + tableWidth, y);
                 y += 15; // Espacio entre encabezados y líneas
             }
 
@@ -71,14 +73,46 @@ namespace CAP001_CreacionDocumentoPDF
 
                 // Dibujar el contenido de la fila
                 gfx.DrawString(producto.Codigo, font, XBrushes.Black, x, y);
-                gfx.DrawString(producto.Nombre, font, XBrushes.Black, x + 85, y);
-                gfx.DrawString(producto.Pvp.ToString("C"), font, XBrushes.Black, x + 255, y);
-                gfx.DrawString(producto.Existencia.ToString("F2"), font, XBrushes.Black, x + 315, y);
-                gfx.DrawString(producto.Vigente.ToString(), font, XBrushes.Black, x + 365, y);
+                // Asegúrate de que el nombre del producto no exceda los 42 caracteres
+                string nombreCortado = producto.Nombre.Length > 42 ? producto.Nombre.Substring(0, 42) : producto.Nombre;
+                gfx.DrawString(nombreCortado, font, XBrushes.Black, x + 85, y);
+                gfx.DrawString(producto.Pvp.ToString("C"), font, XBrushes.Black, x + 300, y);
+                gfx.DrawString(producto.Existencia.ToString("F2"), font, XBrushes.Black, x + 360, y);
+                gfx.DrawString(String.Concat(producto.Ubicacion.ToString(), " - ", producto.Vigente.ToString()), font, XBrushes.Black, x + 415, y);
+
+                // Si el producto tiene una imagen
+                if (producto.Imagen != null)
+                {
+                    using (var ms = new MemoryStream(producto.Imagen))
+                    {
+                        // Reiniciar la posición del MemoryStream
+                        ms.Position = 0;
+
+                        // Cargar la imagen usando ImageSharp
+                        var image = SixLabors.ImageSharp.Image.Load<Rgba32>(ms);
+
+                        // Guardar la imagen en un nuevo MemoryStream en formato PNG o JPEG
+                        using (var outputStream = new MemoryStream())
+                        {
+                            image.SaveAsPng(outputStream); // Cambia a SaveAsJpeg si tienes imágenes JPEG
+                            outputStream.Position = 0; // Reiniciar la posición para leer desde el inicio
+
+                            // Crear la imagen a partir del MemoryStream
+                            using (var img = XImage.FromStream(outputStream))
+                            {
+                                // Dibujar la imagen en el PDF
+                                gfx.DrawImage(img, x + 460, y, 100, 100); // Ajusta la posición y tamaño según sea necesario
+                            }
+                        }
+                    }
+                }
+
+
+
                 y += rowHeight + 100;
 
                 // Dibujar una línea horizontal debajo de la fila
-                gfx.DrawLine(XPens.Black, x, y, x + tableWidth, y);
+                gfx.DrawLine(XPens.Gray, x, y - 15, x + tableWidth, y - 15);
                 y += 5; // Espacio entre filas
                 currentRow++;
             }
@@ -89,5 +123,8 @@ namespace CAP001_CreacionDocumentoPDF
                 pdf.Save(fs);
             }
         }
+
     }
+
+
 }

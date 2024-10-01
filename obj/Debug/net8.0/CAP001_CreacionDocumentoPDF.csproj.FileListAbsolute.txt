@@ -43,3 +43,9 @@ D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\runtimes
 D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\runtimes\osx\lib\net8.0\System.DirectoryServices.Protocols.dll
 D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.DirectoryServices.Protocols.dll
 D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\SixLabors.ImageSharp.dll
+D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\SkiaSharp.dll
+D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\runtimes\osx\native\libSkiaSharp.dylib
+D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\runtimes\win-x64\native\libSkiaSharp.dll
+D:\Repositorio\ConsoleApps\CAP001_CreacionDocumentoPDF\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.dll

@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|d:\\repositorio\\consoleapps\\cap001_creaciondocumentopdf\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|solutionrelative:pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|d:\\repositorio\\consoleapps\\cap001_creaciondocumentopdf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|d:\\repositorio\\consoleapps\\cap001_creaciondocumentopdf\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|solutionrelative:articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|d:\\repositorio\\consoleapps\\cap001_creaciondocumentopdf\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|solutionrelative:pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|d:\\repositorio\\consoleapps\\cap001_creaciondocumentopdf\\oracleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|solutionrelative:oracleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|d:\\repositorio\\consoleapps\\cap001_creaciondocumentopdf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|d:\\repositorio\\consoleapps\\cap001_creaciondocumentopdf\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B803D5EA-8970-4E9F-A284-110A8B7552F1}|CAP001_CreacionDocumentoPDF.csproj|solutionrelative:articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -52,14 +52,14 @@
               "RelativeDocumentMoniker": "OracleService.cs",
               "ToolTip": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\OracleService.cs",
               "RelativeToolTip": "OracleService.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAwwFEAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T21:16:45.336Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Articulo.cs",
               "DocumentMoniker": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\Articulo.cs",
               "RelativeDocumentMoniker": "Articulo.cs",
@@ -72,26 +72,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PDFService.cs",
               "DocumentMoniker": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\PDFService.cs",
               "RelativeDocumentMoniker": "PDFService.cs",
               "ToolTip": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\PDFService.cs",
               "RelativeToolTip": "PDFService.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAA2wEwAAABeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T05:10:57.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAADqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T05:05:54.355Z",
               "EditorCaption": ""

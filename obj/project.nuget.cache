@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "i5qBprsyPow=",
+  "dgSpecHash": "jo+J2PW5Cko=",
   "success": true,
   "projectFilePath": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\CAP001_CreacionDocumentoPDF.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,10 @@
     "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\oracle.manageddataaccess.core\\23.5.1\\oracle.manageddataaccess.core.23.5.1.nupkg.sha512",
     "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\pdfsharp\\6.1.1\\pdfsharp.6.1.1.nupkg.sha512",
+    "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\sixlabors.imagesharp\\3.1.5\\sixlabors.imagesharp.3.1.5.nupkg.sha512",
+    "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
+    "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+    "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
     "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
     "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
