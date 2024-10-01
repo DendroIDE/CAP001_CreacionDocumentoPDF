@@ -2,7 +2,7 @@
 
 try
 {
-string filePath = "c:\\temp\\ListadoArticulos.pdf";
+    
     // Leer una cadenas de texto que seran las credenciales del acceso a la base de datos
     Console.Write("Ingresar usuario de conexion a la base de datos: ");
     string input_usuario_oracle_connect = Console.ReadLine();
@@ -23,16 +23,45 @@ string filePath = "c:\\temp\\ListadoArticulos.pdf";
     Console.WriteLine("Ejecutando la lectura de articulos. No cierre la consola.");
     List<Articulo> articulos = oracleService.GetArticulos();
     PDFService pdfService = new PDFService();
-    // Crear Archivo PDF
-    Console.WriteLine("Creando Archivo PDF. No cierre la consola.");
-    pdfService.CreatePDF(filePath, articulos);
-
-    Console.WriteLine("PDF creado exitosamente en: " + filePath);
-
+    // Variables de creacion del archivo
+    string filePath;
+    bool archivoCreado = false;
+    // Ciclo de creacion del archivo
+    while (!archivoCreado)
+    {
+        // Preguntar la ruta donde se guardara el archivo
+        Console.WriteLine("Por favor, introduce la ruta completa donde deseas guardar el archivo PDF (incluyendo el nombre del archivo).");
+        Console.WriteLine("Ejemplo: C:\\Users\\Usuario\\Documents\\mi_archivo.pdf");
+        Console.Write("Ruta: ");
+        // Capturar la entrada de la ruta
+        filePath = Console.ReadLine();
+        // Validar la ruta del archivo
+        if (string.IsNullOrWhiteSpace(filePath) || !Path.GetExtension(filePath).Equals(".pdf", StringComparison.OrdinalIgnoreCase))
+        {
+            Console.WriteLine("La ruta del archivo no es válida. Asegúrate de que incluya el nombre del archivo y la extensión .pdf.");
+        }
+        else
+        {
+            // Lógica para guardar el archivo PDF
+            try
+            {
+                // Crear Archivo PDF
+                Console.WriteLine("Creando Archivo PDF. No cierre la consola.");
+                pdfService.CreatePDF(filePath, articulos);
+                Console.WriteLine("El archivo se ha guardado correctamente en: " + filePath);
+                // Salir del bucle ya que el archivo se creó exitosamente
+                archivoCreado = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ocurrió un error al guardar el archivo: " + ex.Message);
+            }
+        }
+    }
 }
 catch (Exception ex)
 {
-    Console.WriteLine("Ocurrio un error: " + ex.ToString());
+    Console.WriteLine("Ocurrio un error: " + ex.Message);
 	throw;
 }
 

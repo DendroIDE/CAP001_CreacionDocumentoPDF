@@ -53,7 +53,6 @@ namespace CAP001_CreacionDocumentoPDF
    AND A.SECC_OFICINA = '001'
    AND A.VIGENTE = 'S'
    AND V.LSPR_LSPR_ID = '0'
-   AND T.GRAR_CODIGRUP = '03'
  ORDER BY VIGENTE DESC, CODIGO ASC";
             using (var command = new OracleCommand(query, GetConnection()))
             {
