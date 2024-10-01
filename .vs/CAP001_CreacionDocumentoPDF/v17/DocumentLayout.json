@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "OracleService.cs",
               "ToolTip": "D:\\Repositorio\\ConsoleApps\\CAP001_CreacionDocumentoPDF\\OracleService.cs",
               "RelativeToolTip": "OracleService.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAiwCAAAAAJAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAiwCYAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T21:16:45.336Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "RelativeToolTip": "Articulo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T05:20:05.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T05:20:05.52Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "PDFService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAABaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T05:10:57.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T05:10:57.262Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAACoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T05:05:54.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T05:05:54.355Z"
             }
           ]
         }
