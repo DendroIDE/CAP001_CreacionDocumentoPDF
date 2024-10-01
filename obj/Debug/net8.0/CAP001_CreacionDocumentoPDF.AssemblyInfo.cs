@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CAP001_CreacionDocumentoPDF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b160ed4d9d7f5dffdde235ad385d6d62fd1b118")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e7d52d38ef2241cc23c308c4b7e132b9bf328bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("CAP001_CreacionDocumentoPDF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CAP001_CreacionDocumentoPDF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -31,6 +31,7 @@ namespace CAP001_CreacionDocumentoPDF
         // Ejemplo de consulta de datos
         public List<Articulo> GetArticulos()
         {
+
             List<Articulo> articulos = new List<Articulo>();
 
             string query = @"SELECT T.ARTICULO CODIGO,
@@ -52,6 +53,7 @@ namespace CAP001_CreacionDocumentoPDF
    AND A.SECC_OFICINA = '001'
    AND A.VIGENTE = 'S'
    AND V.LSPR_LSPR_ID = '0'
+   AND T.GRAR_CODIGRUP = '03'
  ORDER BY VIGENTE DESC, CODIGO ASC";
             using (var command = new OracleCommand(query, GetConnection()))
             {
@@ -79,6 +81,9 @@ namespace CAP001_CreacionDocumentoPDF
                             Vigente = reader.GetString(5)[0],
                             Imagen = imagen
                         };
+                        // Listando articulos
+                        Console.WriteLine($"Ejecutando a lectura del articulo: {articulo.Codigo} - {articulo.Nombre}. No cierre la consola.");
+                        // Añadiendo articlos a una lista
                         articulos.Add(articulo);
                     }
                 }

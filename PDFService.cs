@@ -10,7 +10,7 @@ namespace CAP001_CreacionDocumentoPDF
 {
     public class PDFService
     {
-        public void CreatePDF(string filePath, List<Articulo> productos)
+        public void CreatePDF(string filePath, List<Articulo> articulos)
         {
             // Crear un nuevo documento PDF
             PdfDocument pdf = new PdfDocument();
@@ -19,6 +19,7 @@ namespace CAP001_CreacionDocumentoPDF
             PdfPage page = null;
 
             XFont font = new XFont("Verdana", 8);
+            XFont fontSemi = new XFont("Verdana", 4);
             XFont fontBold = new XFont("Verdana", 10);
 
             // Definir las dimensiones iniciales de la tabla
@@ -61,8 +62,11 @@ namespace CAP001_CreacionDocumentoPDF
                 y += 15; // Espacio entre encabezados y líneas
             }
 
+            // Inicializar el contador de artículos
+            int index = 1;
+
             // Dibujar cada producto en la tabla
-            foreach (var producto in productos)
+            foreach (var articulo in articulos)
             {
                 // Comprobar si es la primera página o si hemos alcanzado el número máximo de filas por página
                 if (page == null || currentRow >= maxRowsPerPage)
@@ -71,19 +75,21 @@ namespace CAP001_CreacionDocumentoPDF
                     currentRow = 0; // Reiniciar el contador de filas para la nueva página
                 }
 
+                // Dibujar el contenido del indice de la fila
+                gfx.DrawString(index.ToString(), fontSemi, XBrushes.Black, x - 20, y + 100);
                 // Dibujar el contenido de la fila
-                gfx.DrawString(producto.Codigo, font, XBrushes.Black, x, y);
+                gfx.DrawString(articulo.Codigo, font, XBrushes.Black, x, y);
                 // Asegúrate de que el nombre del producto no exceda los 42 caracteres
-                string nombreCortado = producto.Nombre.Length > 42 ? producto.Nombre.Substring(0, 42) : producto.Nombre;
+                string nombreCortado = articulo.Nombre.Length > 42 ? articulo.Nombre.Substring(0, 42) : articulo.Nombre;
                 gfx.DrawString(nombreCortado, font, XBrushes.Black, x + 85, y);
-                gfx.DrawString(producto.Pvp.ToString("C"), font, XBrushes.Black, x + 300, y);
-                gfx.DrawString(producto.Existencia.ToString("F2"), font, XBrushes.Black, x + 360, y);
-                gfx.DrawString(String.Concat(producto.Ubicacion.ToString(), " - ", producto.Vigente.ToString()), font, XBrushes.Black, x + 415, y);
+                gfx.DrawString(articulo.Pvp.ToString("C"), font, XBrushes.Black, x + 300, y);
+                gfx.DrawString(articulo.Existencia.ToString("F2"), font, XBrushes.Black, x + 360, y);
+                gfx.DrawString(String.Concat(articulo.Ubicacion.ToString(), " - ", articulo.Vigente.ToString()), font, XBrushes.Black, x + 415, y);
 
                 // Si el producto tiene una imagen
-                if (producto.Imagen != null)
+                if (articulo.Imagen != null)
                 {
-                    using (var ms = new MemoryStream(producto.Imagen))
+                    using (var ms = new MemoryStream(articulo.Imagen))
                     {
                         // Reiniciar la posición del MemoryStream
                         ms.Position = 0;
@@ -107,14 +113,16 @@ namespace CAP001_CreacionDocumentoPDF
                     }
                 }
 
-
-
                 y += rowHeight + 100;
 
                 // Dibujar una línea horizontal debajo de la fila
                 gfx.DrawLine(XPens.Gray, x, y - 15, x + tableWidth, y - 15);
+                // Impreso de articulos
+                Console.WriteLine($"Impreso del articulo Nº {index}: {articulo.Codigo} - {articulo.Nombre}. No cierre la consola.");
                 y += 5; // Espacio entre filas
                 currentRow++;
+                // Incrementar el índice para el próximo artículo
+                index++;
             }
 
             // Guardar el PDF
